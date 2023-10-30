@@ -318,7 +318,7 @@ const AssetBalances = ({ balanceData, walletType }) => {
         SORTING_FUNCTIONS_OBJ.ascending(balanceData, sorting.prop)
       );
     }
-  }, [balanceData]);
+  }, [balanceData, sorting]);
 
   /**
    * Render HTML
