@@ -57,7 +57,7 @@ const SORTING_FUNCTIONS_OBJ = {
   descending: (obj, prop) => {
     const sortedArr = Object.entries(obj)
       .map(([symbol, coin]) => ({ symbol, ...coin }))
-      .sort((a, b) => a[prop] - b[prop] || a.symbol.localeCompare(b.symbol));
+      .sort((a, b) => a[prop] - b[prop] || b.symbol.localeCompare(a.symbol));
 
     return Object.fromEntries(
       sortedArr.map(({ symbol, ...rest }) => [symbol, rest])
@@ -313,9 +313,11 @@ const AssetBalances = ({ balanceData, walletType }) => {
       //         return compareResult;
       //     })
       // )
-
+      console.log("sorting", sorting.prop);
       setSortedBalanceData(
-        SORTING_FUNCTIONS_OBJ.ascending(balanceData, sorting.prop)
+        sorting.descending
+          ? SORTING_FUNCTIONS_OBJ.descending(balanceData, sorting.prop)
+          : SORTING_FUNCTIONS_OBJ.ascending(balanceData, sorting.prop)
       );
     }
   }, [balanceData, sorting]);
