@@ -48,7 +48,7 @@ const SORTING_FUNCTIONS_OBJ = {
   ascending: (obj, prop) => {
     const sortedArr = Object.entries(obj)
       .map(([symbol, coin]) => ({ symbol, ...coin }))
-      .sort((a, b) => b[prop] - a[prop] || a.symbol.localeCompare(b.symbol));
+      .sort((a, b) => a[prop] - b[prop] || b.symbol.localeCompare(a.symbol));
 
     return Object.fromEntries(
       sortedArr.map(({ symbol, ...rest }) => [symbol, rest])
@@ -57,7 +57,7 @@ const SORTING_FUNCTIONS_OBJ = {
   descending: (obj, prop) => {
     const sortedArr = Object.entries(obj)
       .map(([symbol, coin]) => ({ symbol, ...coin }))
-      .sort((a, b) => a[prop] - b[prop] || b.symbol.localeCompare(a.symbol));
+      .sort((a, b) => b[prop] - a[prop] || a.symbol.localeCompare(b.symbol));
 
     return Object.fromEntries(
       sortedArr.map(({ symbol, ...rest }) => [symbol, rest])
@@ -155,7 +155,7 @@ const AssetBalances = ({ balanceData, walletType }) => {
   const [hideSmallBalance, setHideSmallBalance] = useState(smallBalances.hide);
   const [sorting, setSorting] = useState({
     prop: "total_available_usdt_num",
-    descending: false,
+    descending: true,
   });
   const [sortedBalanceData, setSortedBalanceData] = useState({});
 
@@ -238,7 +238,7 @@ const AssetBalances = ({ balanceData, walletType }) => {
     if (sorting.prop === prop) {
       setSorting((prev) => ({ prop, descending: !prev.descending }));
     } else {
-      setSorting({ prop, descending: false });
+      setSorting({ prop, descending: true });
     }
   };
 
