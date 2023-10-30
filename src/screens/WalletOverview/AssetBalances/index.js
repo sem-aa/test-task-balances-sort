@@ -155,7 +155,7 @@ const AssetBalances = ({ balanceData, walletType }) => {
   const [hideSmallBalance, setHideSmallBalance] = useState(smallBalances.hide);
   const [sorting, setSorting] = useState({
     prop: "total_available_usdt_num",
-    descending: true,
+    descending: false,
   });
   const [sortedBalanceData, setSortedBalanceData] = useState({});
 
@@ -238,7 +238,7 @@ const AssetBalances = ({ balanceData, walletType }) => {
     if (sorting.prop === prop) {
       setSorting((prev) => ({ prop, descending: !prev.descending }));
     } else {
-      setSorting({ prop, descending: true });
+      setSorting({ prop, descending: false });
     }
   };
 
@@ -313,7 +313,7 @@ const AssetBalances = ({ balanceData, walletType }) => {
       //         return compareResult;
       //     })
       // )
-      console.log("sorting", sorting.prop);
+      console.log("sorting", sorting);
       setSortedBalanceData(
         sorting.descending
           ? SORTING_FUNCTIONS_OBJ.descending(balanceData, sorting.prop)
