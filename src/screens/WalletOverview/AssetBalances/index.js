@@ -313,7 +313,7 @@ const AssetBalances = ({ balanceData, walletType }) => {
       //         return compareResult;
       //     })
       // )
-      console.log("sorting", sorting);
+
       setSortedBalanceData(
         sorting.descending
           ? SORTING_FUNCTIONS_OBJ.descending(balanceData, sorting.prop)
@@ -383,8 +383,8 @@ const AssetBalances = ({ balanceData, walletType }) => {
 
                   <div className={styles.col}>
                     <div
-                      className={`sorting ${checkClassName("total_balance")}`}
-                      onClick={() => handleSort("total_balance")}
+                      className={`sorting ${checkClassName("total_balance_usdt")}`}
+                      onClick={() => handleSort("total_balance_usdt")}
                     >
                       {t(`${page}.sorting.totalBalance`)}
                     </div>
@@ -392,7 +392,7 @@ const AssetBalances = ({ balanceData, walletType }) => {
                   <div className={styles.col}>
                     <div
                       className={`sorting ${checkClassName("total_available")}`}
-                      onClick={() => handleSort("total_available")}
+                      onClick={() => handleSort("total_available_usdt")}
                     >
                       {t(`${page}.sorting.totalAvailable`)}
                     </div>
@@ -400,7 +400,7 @@ const AssetBalances = ({ balanceData, walletType }) => {
                   <div className={styles.col}>
                     <div
                       className={`sorting ${checkClassName("frozen")}`}
-                      onClick={() => handleSort("frozen")}
+                      onClick={() => handleSort("frozen_usdt")}
                     >
                       {t(`${page}.sorting.frozen`)}
                     </div>
