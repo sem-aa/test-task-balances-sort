@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/test-task-balances-sort/static/css/main.78afc326.chunk.css",
-    "main.js": "/test-task-balances-sort/static/js/main.82fd5777.chunk.js",
+    "main.js": "/test-task-balances-sort/static/js/main.03ae3a91.chunk.js",
     "runtime-main.js": "/test-task-balances-sort/static/js/runtime-main.334277ce.js",
     "static/js/2.d0bff96e.chunk.js": "/test-task-balances-sort/static/js/2.d0bff96e.chunk.js",
     "index.html": "/test-task-balances-sort/index.html",
@@ -11,6 +11,6 @@
     "static/js/runtime-main.334277ce.js",
     "static/js/2.d0bff96e.chunk.js",
     "static/css/main.78afc326.chunk.css",
-    "static/js/main.82fd5777.chunk.js"
+    "static/js/main.03ae3a91.chunk.js"
   ]
 }
