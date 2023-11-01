@@ -1,5 +1,6 @@
 {
   "name": "exzi",
+  "homepage": "https://sem-aa.github.io/test-task-balances-sort",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -73,6 +74,8 @@
     "start:test": "env-cmd -f .env.testing react-scripts start",
     "build": "env-cmd -f .env react-scripts build",
     "build:test": "env-cmd -f .env.testing react-scripts build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -96,6 +99,7 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "gh-pages": "^6.0.0",
     "react-error-overlay": "6.0.9"
   },
   "resolutions": {
